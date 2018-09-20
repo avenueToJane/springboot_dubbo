@@ -1,7 +1,5 @@
 package org.springboot.iservice.user;
 
-import java.util.List;
-
 import org.springboot.beans.vo.User;
 
 /**

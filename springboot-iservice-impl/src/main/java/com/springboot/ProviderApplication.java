@@ -1,15 +1,8 @@
 package com.springboot;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.tomcat.jdbc.pool.DataSource;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import java.io.IOException;
 /**
@@ -19,6 +12,8 @@ import java.io.IOException;
 * <p>Company: xxx</p> 
 * @author Mr.yang
 * @date 2018年9月19日 下午5:52:06
+* 通过@ImportResource实现xml配置的装载
+* 通过使用@MapperScan可以指定要扫描的Mapper类的包的路径
  */
 @SpringBootApplication
 @ImportResource({ "classpath:config/spring-dubbo.xml" })

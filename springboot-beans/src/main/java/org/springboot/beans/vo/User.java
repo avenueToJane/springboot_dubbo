@@ -3,208 +3,82 @@ package org.springboot.beans.vo;
 import java.io.Serializable;
 import java.sql.Date;
 
+import lombok.Data;
+/**
+ * 下面介绍几个我常用的 lombok 注解：
+
+@Data   ：注解在类上；提供类所有属性的 getting 和 setting 方法，此外还提供了equals、canEqual、hashCode、toString 方法
+@Setter：注解在属性上；为属性提供 setting 方法
+@Getter：注解在属性上；为属性提供 getting 方法
+@Log4j ：注解在类上；为类提供一个 属性名为log 的 log4j 日志对象
+@NoArgsConstructor：注解在类上；为类提供一个无参的构造方法
+@AllArgsConstructor：注解在类上；为类提供一个全参的构造方法
+* <p>Title: User </p>
+* <p>Description: </p>
+* <p>Company: xxx</p> 
+* @author Mr.yang
+* @date 2018年9月20日 上午10:48:44
+ */
+@Data
 public class User implements Serializable{
+	
+   private static final long serialVersionUID = 1L;
 
-
-    private static final long serialVersionUID = 1L;
-
-	private Integer id;
+   private Integer id;
     /**
      * 头像
      */
-	private String avatar;
+   private String avatar;
     /**
      * 账号
      */
-	private String account;
+    private String account;
     /**
      * 密码
      */
-	private String password;
+     private String password;
     /**
      * md5密码盐
      */
-	private String salt;
+     private String salt;
     /**
      * 名字
      */
-	private String name;
+     private String name;
     /**
      * 生日
      */
-	private Date birthday;
+     private Date birthday;
     /**
      * 性别（1：男 2：女）
      */
-	private Integer sex;
+     private Integer sex;
     /**
      * 电子邮件
      */
-	private String email;
+     private String email;
     /**
      * 电话
      */
-	private String phone;
+     private String phone;
     /**
      * 角色id
      */
-	private String roleid;
+	 private String roleid;
     /**
      * 部门id
      */
-	private Integer deptid;
+	 private Integer deptid;
     /**
      * 状态(1：启用  2：冻结  3：删除）
      */
-	private Integer status;
+	 private Integer status;
     /**
      * 创建时间
      */
-	private Date createtime;
+	 private Date createtime;
     /**
      * 保留字段
      */
-	private Integer version;
-
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getAvatar() {
-		return avatar;
-	}
-
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
-	}
-
-	public String getAccount() {
-		return account;
-	}
-
-	public void setAccount(String account) {
-		this.account = account;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getSalt() {
-		return salt;
-	}
-
-	public void setSalt(String salt) {
-		this.salt = salt;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
-	public Integer getSex() {
-		return sex;
-	}
-
-	public void setSex(Integer sex) {
-		this.sex = sex;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getRoleid() {
-		return roleid;
-	}
-
-	public void setRoleid(String roleid) {
-		this.roleid = roleid;
-	}
-
-	public Integer getDeptid() {
-		return deptid;
-	}
-
-	public void setDeptid(Integer deptid) {
-		this.deptid = deptid;
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Date getCreatetime() {
-		return createtime;
-	}
-
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
-	}
-
-	public Integer getVersion() {
-		return version;
-	}
-
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
-
-	@Override
-	public String toString() {
-		return "User{" +
-			"id=" + id +
-			", avatar=" + avatar +
-			", account=" + account +
-			", password=" + password +
-			", salt=" + salt +
-			", name=" + name +
-			", birthday=" + birthday +
-			", sex=" + sex +
-			", email=" + email +
-			", phone=" + phone +
-			", roleid=" + roleid +
-			", deptid=" + deptid +
-			", status=" + status +
-			", createtime=" + createtime +
-			", version=" + version +
-			"}";
-	}
+	 private Integer version;
 }
