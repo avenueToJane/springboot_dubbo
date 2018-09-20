@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 import java.io.IOException;
-
+//通过@ImportResource实现xml配置的装载
+//@SpringBootApplication启动类注解
 @SpringBootApplication
 @ImportResource({"classpath:config/spring-dubbo.xml"})
 public class ProviderApplication {
