@@ -3,6 +3,7 @@ package org.springboot.beans.vo;
 import java.io.Serializable;
 import java.sql.Date;
 
+import lombok.Builder;
 import lombok.Data;
 /**
  * 下面介绍几个我常用的 lombok 注解：
@@ -81,4 +82,6 @@ public class User implements Serializable{
      * 保留字段
      */
 	 private Integer version;
+	 
+	 
 }

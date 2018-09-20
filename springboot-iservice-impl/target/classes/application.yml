@@ -1,12 +1,22 @@
+#服务端口
 server:
   port: 8081
+  
+#数据库访问配置
 spring:
   datasource:
+    #用户名
     username: root
+    #密码
     password: root
+    #数据库连接地址
     url: jdbc:mysql://localhost:3306/ys_west?useUnicode=true&characterEncoding=utf-8
+    #数据库连接驱动
     driver-class-name: com.mysql.jdbc.Driver
+    #阿里连接池druid
     type: com.alibaba.druid.pool.DruidDataSource
 mybatis:
+  #指定mapper.xml所在位置（配置了mapper的映射文件扫描mapper.xml文件）
   mapper-locations: classpath*:mapper/*.xml
+  #指定实体类所做包（可以数据库与实体类对应）
   type-aliases-package: org.springboot.beans.vo
