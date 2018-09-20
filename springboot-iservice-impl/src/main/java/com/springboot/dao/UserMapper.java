@@ -1,10 +1,10 @@
-package org.springboot.dao;
+package com.springboot.dao;
 
 import java.util.List;
 
 import org.springboot.beans.vo.User;
 
-public interface UserDao {
+public interface UserMapper {
 	
 	List<User> selectUser();//查询所有用户信息
 
