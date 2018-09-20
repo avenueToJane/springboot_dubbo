@@ -35,24 +35,29 @@
 			<artifactId>springboot-utils</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+<!-- 这是Spring Boot的核心启动器，包含了自动配置、日志和YAML。 -->
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+         <!-- spring-boot-starter-web 支持全栈式Web开发，包括Tomcat和spring-webmvc。 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+         <!--阿里dubbo服务jar  -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
         </dependency>
+         <!-- Zookeeper ZkClient -->
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
     </dependencies>
+    <!-- Spring Boot Maven plugin能够将Spring Boot应用打包为可执行的jar或war文件，
+    然后以通常的方式运行Spring Boot应用。 -->
     <build>
         <plugins>
             <plugin>
