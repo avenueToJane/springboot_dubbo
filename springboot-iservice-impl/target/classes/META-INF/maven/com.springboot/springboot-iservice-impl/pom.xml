@@ -45,6 +45,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		<!--过滤掉自带的spring-boot-starter-logging -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- 过滤结束 -->
+		<!-- 添加日志spring-boot-starter-log4j依赖包 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j</artifactId>
 		</dependency>
 		 <!--阿里dubbo服务jar  -->
 		<dependency>
