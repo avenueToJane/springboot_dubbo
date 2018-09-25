@@ -27,4 +27,10 @@ public class IUserServiceImpl implements IUserService {
 		
 		return str;
 	}
+	@Override
+	public int addUser(User user) {
+		return userMapper.addUser(user);
+		
+	}
+	
 }

@@ -8,4 +8,6 @@ public interface UserMapper {
 	
 	List<User> selectUser();//查询所有用户信息
 
+	int addUser(User user);
+
 }

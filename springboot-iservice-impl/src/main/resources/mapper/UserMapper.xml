@@ -9,8 +9,37 @@
 		<result column="account" property="account" />
 		<result column="password" property="password" />
 	</resultMap>
-	
-   <select id="selectUser" resultMap="userResult">
-		select * from sys_user 
+
+	<select id="selectUser" resultMap="userResult">
+		select * from sys_user
 	</select>
+	<!--插入短信下发满意度结果 -->
+	<insert id="addUser" parameterType="org.springboot.beans.vo.User"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		sys_user(
+		avatar,
+		account,
+		password,
+		salt,
+		name,
+		birthday,
+		sex,
+		email,
+		phone,
+		roleid,
+		deptid,
+		status,
+		createtime,
+		version
+		)
+		values(#{avatar},#{account},#{password},
+		#{salt},#{name},#{birthday},#{sex},#{email}
+		,#{phone}
+		,#{roleid}
+		,#{deptid}
+		,#{status}
+		,#{createtime}
+		,#{version})
+	</insert>
 </mapper>

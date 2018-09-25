@@ -3,6 +3,9 @@ package org.springboot.beans.vo;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 import lombok.Builder;
 import lombok.Data;
 /**
@@ -33,7 +36,14 @@ public class User implements Serializable{
     /**
      * 账号
      */
+    @NotNull(message = "account不能为空!!!")
     private String account;
+    /**
+     * 电话
+     */
+     @NotNull(message = "telnum不能为空!!!")
+     @Pattern(regexp = "^[1][3,4,5,7,8,9][0-9]{9}$", message = "手机号码格式错误!!!")
+     private String phone;
     /**
      * 密码
      */
@@ -58,10 +68,6 @@ public class User implements Serializable{
      * 电子邮件
      */
      private String email;
-    /**
-     * 电话
-     */
-     private String phone;
     /**
      * 角色id
      */

@@ -16,4 +16,6 @@ public interface IUserService {
 	
 	String sayHello(String str);
 
+	int addUser(User user);
+
 }
