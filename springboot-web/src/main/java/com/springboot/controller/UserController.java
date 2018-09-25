@@ -1,5 +1,6 @@
 package com.springboot.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.springboot.exception.GeneralException;
 import com.springboot.service.RedisService;
 
 import io.swagger.annotations.ApiImplicitParams;
@@ -12,6 +13,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
+import org.springboot.beans.constant.ErrorConstant;
 import org.springboot.beans.vo.User;
 import org.springboot.iservice.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,10 +56,10 @@ public class UserController {
    	@ApiImplicitParams({})
    	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
        public User addUser(@RequestBody(required = true) @Valid User user,
-   			BindingResult result) throws Exception {
+   			BindingResult result) throws GeneralException {
     	if (result.hasErrors()) {
 			List<FieldError> fieldErrors = result.getFieldErrors();
-			throw new Exception(fieldErrors.get(0).getDefaultMessage());
+			throw new GeneralException(ErrorConstant.IN_PARAM_VALIDATE_ERROR,fieldErrors.get(0).getDefaultMessage());
 		}
        	iUserService.addUser(user);
        	logger.info("用户的信息"+user);
