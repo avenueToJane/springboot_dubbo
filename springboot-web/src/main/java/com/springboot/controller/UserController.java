@@ -2,12 +2,18 @@ package com.springboot.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.springboot.service.RedisService;
 
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 import org.apache.log4j.Logger;
 import org.springboot.beans.vo.User;
 import org.springboot.iservice.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,8 +32,10 @@ public class UserController {
     public String hello() {
         return iUserService.sayHello("Hello springboot and dubbo!");
     }
-
-    @GetMapping("user")
+    @ApiOperation(value = "查询用户信息", notes = "查询用户信息", produces = "application/json", consumes = "application/json", httpMethod = "POST")
+	@ApiResponses({ @ApiResponse(code = 200, message = "OK", response = User.class) })
+	@ApiImplicitParams({})
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
     public User user() {
     	User user=iUserService.findUser();
     	logger.info("用户的信息"+user);
