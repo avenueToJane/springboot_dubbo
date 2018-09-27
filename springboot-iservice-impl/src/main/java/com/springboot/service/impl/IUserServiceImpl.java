@@ -30,7 +30,6 @@ public class IUserServiceImpl implements IUserService {
 	@Override
 	public int addUser(User user) {
 		return userMapper.addUser(user);
-		
 	}
 	
 }
